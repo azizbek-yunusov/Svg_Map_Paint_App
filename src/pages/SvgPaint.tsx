@@ -7,12 +7,15 @@ import {
   Title,
   Group,
   Stack,
+  NumberInput,
 } from "@mantine/core";
 import html2canvas from "html2canvas";
+import { IconDownload } from "@tabler/icons-react";
 
 const SvgPaint: React.FC = () => {
   const [fillColor, setFillColor] = useState("#000000");
   const [borderColor, setBorderColor] = useState("#000000");
+  const [strokeWidth, setStrokeWidth] = useState<any>(1);
   const [selectedPath, setSelectedPath] = useState<SVGPathElement | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -20,6 +23,7 @@ const SvgPaint: React.FC = () => {
     const path = event.target as SVGPathElement;
     path.style.fill = fillColor;
     path.style.stroke = borderColor;
+    path.style.strokeWidth = strokeWidth.toString();
     setSelectedPath(path);
   };
 
@@ -47,7 +51,7 @@ const SvgPaint: React.FC = () => {
     // Apply selected colors to the cloned path
     clonedPath.style.fill = fillColor;
     clonedPath.style.stroke = borderColor;
-    clonedPath.style.strokeWidth = "2";
+    clonedPath.style.strokeWidth = strokeWidth.toString();
 
     svgElement.appendChild(clonedPath);
     const container = document.createElement("div");
@@ -137,6 +141,18 @@ const SvgPaint: React.FC = () => {
                 "#fd7e14",
               ]}
             />
+
+            <NumberInput
+              label="Chegara qalinligi"
+              value={strokeWidth}
+              onChange={(val) => setStrokeWidth(val)}
+              min={0.1}
+              max={10}
+              step={0.1}
+              defaultValue={1}
+              size="md"
+              radius="md"
+            />
           </Group>
 
           <Button
@@ -145,6 +161,7 @@ const SvgPaint: React.FC = () => {
             radius="md"
             onClick={downloadAsPNG}
             disabled={!selectedPath}
+            rightSection={<IconDownload size={14} />}
           >
             Rasmni yuklash
           </Button>

@@ -4,13 +4,11 @@ import SvgPaint from "./pages/SvgPaint";
 import { MantineProvider } from "@mantine/core";
 
 function App() {
- 
   return (
-    <MantineProvider >
-
-    <Routes>
-      <Route path="/" element={<SvgPaint />} />
-    </Routes>
+    <MantineProvider>
+      <Routes>
+        <Route path="/" element={<SvgPaint />} />
+      </Routes>
     </MantineProvider>
   );
 }
