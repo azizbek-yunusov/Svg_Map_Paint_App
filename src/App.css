@@ -1,0 +1,42 @@
+h1, h2, h3, h4, h5, h6 , p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: #d2deff !important;
+}
+.dark .ant-table-tbody > tr.ant-table-row:hover > td {
+  background: #24005e !important;
+}
+.table-row-color {
+  background-color: transparent;
+}
+.disabled-icon-color {
+  color: #ccc !important;
+}
+.dark .disabled-icon-color {
+  color: #5c5c5c !important;
+}
+.borderless-form .ant-form-item-control {
+  border-color: aquamarine ; /* Remove border around controls */
+}
+
+.borderless-form .ant-input {
+  border: 1px solid transparent; /* Remove border from input fields */
+  box-shadow: none; /* Remove box shadow if any */
+}
+.org-form :where(.css-dev-only-do-not-override-18iikkb).ant-input-disabled,
+.org-form :where(.css-dev-only-do-not-override-18iikkb).ant-input[disabled] {
+  color: #131313;
+  background-color: transparent;
+  cursor: auto;
+}
+
+.notification-type-info {
+  padding: 1 !important;
+}
+
+.calc-pdf-view-height {
+  min-height: calc(100vh - "50px");
+}

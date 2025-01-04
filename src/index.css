@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0 none !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+.container-full {
+  @apply w-full lg:px-6 md:px-5 px-4 mx-auto min-w-[320px];
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply dark:bg-[#121212] bg-white;
+  }
+}
+.primary_bg {
+  @apply dark:bg-[#00eaea] bg-[#fca832];
+}
+.text_color_primary {
+  @apply text-[#1c9174] dark:text-orange-500;
+}
+.fic {
+  @apply flex items-center;
+}
+.flex_center {
+  @apply flex items-center justify-center;
+}
+.flex_betwen {
+  @apply flex items-center justify-between;
+}
+.flex_end {
+  @apply flex items-center justify-end;
+}
+.stc_color {
+  @apply bg-[#1c9174] dark:bg-[#071911] border-4 text-gray-50 transition ease-linear duration-200 border-[#fca832] dark:border-[#e89c32];
+}
+.tranistion_normal {
+  @apply transition ease-linear duration-200;
+}
+.transition_normal {
+  @apply transition-transform ease-linear duration-150;
+}
+.text-primary {
+  @apply text-[#1c9174] dark:text-orange-500;
+}
+.bg_color {
+  @apply bg-white dark:bg-[#121212];
+}
+.text_color {
+  @apply text-gray-800 dark:text-gray-100;
+}
+.box-shadow-p {
+  box-shadow: 8px 11px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.action-icon {
+  @apply text-xl text-gray-800 dark:text-white;
+}
+.action-icon-disabled {
+  @apply text-xl text-gray-300 dark:text-slate-600 mt-1;
+}
+.action-spx {
+  @apply flex items-center space-x-8;
+}
+.action-bar {
+  @apply flex_betwen bg-gray-50/60 dark:bg-black/40 backdrop-blur-sm p-2 rounded-md sticky top-[70px] z-40 shadow-sm mb-2;
+}
+.card-ui-chart {
+  @apply bg-slate-50/30 dark:bg-[#141414] rounded-xl border border-gray-200 dark:border-gray-700;
+}
